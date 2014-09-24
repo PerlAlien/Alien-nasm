@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.03      2014-09-24 13:42:09 -0400
+  - use Alien::gmake to more reliably find GNU Make
+
 0.02      2014-09-24 11:09:32 -0400
   - use gmake if it is available when building
 
