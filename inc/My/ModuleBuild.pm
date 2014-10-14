@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use base qw( Alien::Base::ModuleBuild );
 use Capture::Tiny qw( capture );
+use File::chdir;
+use Alien::gmake;
 
 # this will need to be updated with newer versions!
 # also update inc/pkgconfig/nasm.pc
