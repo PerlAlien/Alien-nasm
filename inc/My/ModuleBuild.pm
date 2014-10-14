@@ -4,9 +4,6 @@ use strict;
 use warnings;
 use base qw( Alien::Base::ModuleBuild );
 use Capture::Tiny qw( capture );
-use Alien::Base::PkgConfig;
-use File::Spec;
-use Alien::gmake;
 
 # this will need to be updated with newer versions!
 # also update inc/pkgconfig/nasm.pc
@@ -32,6 +29,7 @@ sub new
     location => "/pub/nasm/releasebuilds/$fetch_version",
     pattern  => qr{^nasm-.*\.tar\.gz$},
   };
+  $args{alien_bin_requires}->{'Alien::gmake'} = 0;
   
   my $self = $class->SUPER::new(%args);
   
@@ -46,12 +44,9 @@ sub alien_check_installed_version
   $stdout =~ /NASM version ([0-9.]+)/ ? $1 : ();
 }
 
-sub alien_load_pkgconfig
+sub alien_check_built_version
 {
-  my($self) = @_;
-  my %pc;
-  $pc{nasm} = Alien::Base::PkgConfig->new(File::Spec->catfile(qw( inc pkgconfig nasm.pc )));
-  \%pc;
+  $CWD[-1] =~ /^nasm-(.*)$/ ? $1 : 'unknown';
 }
 
 1;
