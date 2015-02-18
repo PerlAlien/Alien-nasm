@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.05      2015-02-18 17:24:25 -0500
   - Require Alien::Base 0.010
 
 0.04      2014-10-14 08:05:46 -0400
