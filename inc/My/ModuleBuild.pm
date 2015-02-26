@@ -9,7 +9,7 @@ use Alien::gmake;
 
 # this will need to be updated with newer versions!
 # also update inc/pkgconfig/nasm.pc
-my $fetch_version = '2.11.05';
+my $fetch_version = '2.11.08';
 
 my $make = Alien::gmake->exe;
 
