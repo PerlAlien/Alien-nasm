@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.06      2015-02-26 10:00:54 -0500
   - When building from source use version 2.11.08 (was 2.11.05)
 
 0.05      2015-02-18 17:24:25 -0500
