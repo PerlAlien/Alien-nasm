@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - use alien_stage_install
 
 0.06      2015-02-26 10:00:54 -0500
   - When building from source use version 2.11.08 (was 2.11.05)

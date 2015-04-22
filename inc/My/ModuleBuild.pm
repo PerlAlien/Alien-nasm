@@ -18,6 +18,7 @@ sub new
   my($class, %args) = @_;
   
   $args{alien_name} = 'nasm';
+  $args{alien_stage_install} = 1;
   $args{alien_build_commands} = [
     '%c --prefix=%s',
     "$make",
