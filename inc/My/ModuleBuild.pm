@@ -5,13 +5,10 @@ use warnings;
 use base qw( Alien::Base::ModuleBuild );
 use Capture::Tiny qw( capture );
 use File::chdir;
-use Alien::gmake;
 
 # this will need to be updated with newer versions!
 # also update inc/pkgconfig/nasm.pc
 my $fetch_version = '2.11.08';
-
-my $make = Alien::gmake->exe;
 
 sub new
 {
@@ -21,10 +18,10 @@ sub new
   $args{alien_stage_install} = 1;
   $args{alien_build_commands} = [
     '%c --prefix=%s',
-    "$make",
+    "%{gmake}",
   ];
   $args{alien_install_commands} = [
-    "$make install",
+    "%{gmake} install",
   ],
   $args{alien_repository} = {
     protocol => 'http',
@@ -32,7 +29,7 @@ sub new
     location => "/pub/nasm/releasebuilds/$fetch_version",
     pattern  => qr{^nasm-.*\.tar\.gz$},
   };
-  $args{alien_bin_requires}->{'Alien::gmake'} = 0;
+  $args{alien_bin_requires}->{'Alien::gmake'} = '0.05';
   
   my $self = $class->SUPER::new(%args);
   
