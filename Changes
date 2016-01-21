@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Compatability for recent changes in Alien::Base
 
 0.08      2015-04-22 11:45:18 -0400
   - Require Alien::Base 0.016 at configure time (needed for alien_stage_install)

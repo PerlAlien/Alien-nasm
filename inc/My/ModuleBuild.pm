@@ -26,7 +26,7 @@ sub new
   $args{alien_repository} = {
     protocol => 'http',
     host     => 'www.nasm.us',
-    location => "/pub/nasm/releasebuilds/$fetch_version",
+    location => "/pub/nasm/releasebuilds/$fetch_version/",
     pattern  => qr{^nasm-.*\.tar\.gz$},
   };
   $args{alien_bin_requires}->{'Alien::gmake'} = '0.05';
