@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use Alien::Base::ModuleBuild as configure_requires
+    instead of Alien::Base
 
 0.09      2016-01-20 22:06:57 -0500
   - Compatability for recent changes in Alien::Base

@@ -14,7 +14,7 @@ $modules{$_} = $_ for qw(
   Alien::Base::ModuleBuild
   Alien::gmake
   Capture::Tiny
-  Module::Build
+  File::ShareDir
   Test::More
 );
 

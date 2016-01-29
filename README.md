@@ -1,4 +1,4 @@
-# Alien::nasm
+# Alien::nasm [![Build Status](https://secure.travis-ci.org/plicease/Alien-nasm.png)](http://travis-ci.org/plicease/Alien-nasm)
 
 Find or build nasm, the netwide assembler
 
