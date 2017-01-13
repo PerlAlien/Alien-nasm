@@ -1,5 +1,7 @@
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More;
 
-use_ok 'Alien::nasm';
+require_ok 'Alien::nasm';
+
+done_testing;
