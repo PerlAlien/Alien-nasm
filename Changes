@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.14      2017-01-31 16:51:38 -0500
+  - Require Alien::Build 0.02
+
 0.12      2017-01-30 22:36:03 -0500
   - migrate from Alien::Base::ModuleBuild to Alien::Build
 
