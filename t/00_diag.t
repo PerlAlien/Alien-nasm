@@ -10,15 +10,22 @@ my %modules;
 my $post_diag;
 
 $modules{$_} = $_ for qw(
-  Alien::Base
-  Alien::Base::ModuleBuild
-  Alien::gmake
+  Alien::Base2
+  Alien::Build::MM
   Capture::Tiny
-  File::ShareDir
+  ExtUtils::MakeMaker
+  IPC::Cmd
+  Test2::Suite
+  Test::Alien
   Test::More
 );
 
-
+$post_diag = sub {
+  require Alien::nasm;
+  diag "version       = ", Alien::nasm->version;
+  diag "bin_dir       = ", $_ for Alien::nasm->bin_dir;
+  diag "dist_dir      = ", Alien::nasm->dist_dir;
+};
 
 my @modules = sort keys %modules;
 
