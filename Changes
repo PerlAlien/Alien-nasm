@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.16      2017-02-08 08:02:46 -0500
+  - Require Alien::Build 0.11 for bugfixes
+
 0.15      2017-02-04 11:42:57 -0500
   - Fixed configure requires bug
   - Require Alien::Build 0.08
