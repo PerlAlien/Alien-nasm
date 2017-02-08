@@ -1,7 +1,7 @@
 use alienfile;
 use Capture::Tiny qw( capture );
 
-requires 'Capture::Tiny';
+configure { requires 'Capture::Tiny' };
 
 plugin 'Probe::CommandLine' => (
   command => 'nasm',
@@ -11,11 +11,37 @@ plugin 'Probe::CommandLine' => (
 
 share {
 
-  # TODO: we can now probably do a hierarchical fetch
-  plugin 'Download' => (
-    url     => 'http://www.nasm.us/pub/nasm/releasebuilds/2.12.02/',
-    version => qr/^nasm-([0-9\.]+)\.tar\.gz$/,
-  );
+  requires 'Path::Tiny';
+  plugin 'Fetch::HTTPTiny' => 'http://www.nasm.us/pub/nasm/releasebuilds';
+  plugin 'Decode::HTML' => ();
+  plugin 'Prefer::SortVersions' => ();
+
+  download sub {
+    my($build) = @_;
+    
+    my $res = $build->decode($build->fetch);
+
+    $res->{list} = [grep { $_->{filename} =~ /^[0-9\.]+$/ } @{ $res->{list} }];
+    
+    $res = $build->prefer($res);
+    
+    die "unable to find first level candidate"
+      unless @{ $res->{list} } > 0;
+    
+    $res = $build->decode($build->fetch($res->{list}->[0]->{url}));
+    
+    $res->{list} = [grep { $_->{filename} =~ /^nasm-[0-9\.]+\.tar\.gz$/ } @{ $res->{list} }];
+
+    $res = $build->prefer($res);
+
+    die "unable to find second level candidate"
+      unless @{ $res->{list} } > 0;
+    
+    $res = $build->fetch($res->{list}->[0]->{url});
+
+    Path::Tiny->new($res->{filename})->spew_raw($res->{content});
+  };
+
   plugin 'Extract' => 'tar.gz';  
   plugin 'Build::MSYS' => ();
 
