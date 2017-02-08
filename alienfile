@@ -40,6 +40,8 @@ share {
     $res = $build->fetch($res->{list}->[0]->{url});
 
     Path::Tiny->new($res->{filename})->spew_raw($res->{content});
+
+    $build->runtime_prop->{command} = 'nasm';
   };
 
   plugin 'Extract' => 'tar.gz';  
