@@ -19,7 +19,7 @@ share {
   download sub {
     my($build) = @_;
     
-    my $res = $build->decode($build->fetch);
+    my $res = $build->decode($build->fetch('http://www.nasm.us/pub/nasm/releasebuilds'));
 
     $res->{list} = [grep { $_->{filename} =~ /^[0-9\.]+$/ } @{ $res->{list} }];
     
