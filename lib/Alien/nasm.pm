@@ -2,7 +2,7 @@ package Alien::nasm;
 
 use strict;
 use warnings;
-use base qw( Alien::Base2 );
+use base qw( Alien::Base );
 use Env qw( @PATH );
 use File::Spec;
 

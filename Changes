@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Remove dep on Alien::Base2.  Use Alien::Base directly.
 
 0.17      2017-02-08 16:49:10 -0500
   - Properly handle the hierarchical directory strcture
