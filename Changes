@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.19      2017-10-03 06:32:05 -0400
   - For MSWin32 download binaries of nasm to avoid MSYS
   - Ensure both nasm and ndisasm are available
 
