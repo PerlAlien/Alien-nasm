@@ -15,8 +15,7 @@ $modules{$_} = $_ for qw(
   Alien::Build::MM
   Capture::Tiny
   ExtUtils::MakeMaker
-  IPC::Cmd
-  Test2::Suite
+  Test2::V0
   Test::Alien
   Test::More
 );
