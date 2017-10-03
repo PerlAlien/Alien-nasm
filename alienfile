@@ -10,6 +10,13 @@ plugin 'Probe::CommandLine' => (
   match   => qr/NASM version/,
 );
 
+plugin 'Probe::CommandLine' => (
+  command      => 'ndisasm',
+  args         => ['-v'],
+  match_stderr => qr/NDISASM version/,
+  secondary    => 1,
+);
+
 share {
 
   requires 'Path::Tiny';

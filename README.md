@@ -4,25 +4,24 @@ Find or build nasm, the netwide assembler
 
 # SYNOPSIS
 
+From your Perl script:
+
     use Alien::nasm ();
     use Env qw( @PATH );
     
     unshift @ENV, Alien::nasm->bin_dir;
     system 'nasm', ...;
 
-Or with [Alien::Build::ModuleBuild](https://metacpan.org/pod/Alien::Build::ModuleBuild):
+From [alienfile](https://metacpan.org/pod/alienfile):
 
-    use Alien::Base::ModuleBuild;
-    Alien::Base::ModuleBuild->new(
-      ...
-      alien_bin_requires => {
-        'Alien::nasm' => '0.11',
-      },
-      alien_build_commands => {
-        "%{nasm} ...",
-      },
-      ...
-    )->create_build_script;
+    use alienfile;
+    
+    share {
+      requires 'Alien::nasm';
+      build [
+        'nasm ...',
+      ];
+    };
 
 # DESCRIPTION
 
@@ -41,6 +40,9 @@ Returns the name of the nasm executable.  As of this writing it is always
 `nasm`, but in the future it may have a different value.
 
 # CAVEATS
+
+On Windows for share builds, we install binaries.  This avoids needing
+to depend on [Alien::MSYS](https://metacpan.org/pod/Alien::MSYS).
 
 This version of [Alien::nasm](https://metacpan.org/pod/Alien::nasm) adds nasm to your path, if it isn't
 already there when you use it, like this:

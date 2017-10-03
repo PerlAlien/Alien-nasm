@@ -9,4 +9,9 @@ run_ok(['nasm', '-v'])
   ->out_like(qr/NASM version/)
   ->note;
 
+run_ok(['ndisasm', '-v'])
+  ->success
+  ->err_like(qr/NDISASM version/)
+  ->note;
+
 done_testing;
