@@ -26,7 +26,7 @@ From L<alienfile>:
  share {
    requires 'Alien::nasm';
    build [
-     'nasm ...',
+     '%{nasm} ...',
    ];
  };
 

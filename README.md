@@ -19,7 +19,7 @@ From [alienfile](https://metacpan.org/pod/alienfile):
     share {
       requires 'Alien::nasm';
       build [
-        'nasm ...',
+        '%{nasm} ...',
       ];
     };
 
