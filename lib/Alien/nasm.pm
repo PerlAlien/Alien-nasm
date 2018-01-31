@@ -37,23 +37,6 @@ This Alien module provides Netwide Assembler (NASM).
 This class is a subclass of L<Alien::Base>, so all of the methods documented there
 should work with this class.
 
-=cut
-
-my $in_path;
-
-sub import
-{
-  require Carp;
-  Carp::carp "Alien::nasm with implicit path modification is deprecated ( see https://metacpan.org/pod/Alien::nasm#CAVEATS )";
-  return if Alien::nasm->install_type('system');
-  return if $in_path;
-  my $dir = File::Spec->catdir(Alien::nasm->dist_dir, 'bin');
-  Carp::carp "adding $dir to PATH";
-  unshift @PATH, $dir;
-  # only do it once.
-  $in_path = 1;
-}
-
 =head1 HELPERS
 
 =head2 nasm
@@ -76,28 +59,3 @@ sub alien_helper
 
 1;
 
-=head1 CAVEATS
-
-On Windows for share builds, we install binaries.  This avoids needing
-to depend on L<Alien::MSYS>.
-
-This version of L<Alien::nasm> adds nasm to your path, if it isn't
-already there when you use it, like this:
-
- use Alien::nasm;  # deprecated, issues a warning
-
-This was a design mistake, and now B<deprecated>.  When L<Alien::nasm> was
-originally written, it was one of the first Alien tool style modules on
-CPAN.  As such, the author and the L<Alien::Base> team hadn't yet come up
-with the best practices for this sort of module.  The author, and the
-L<Alien::Base> team feel that for consistency and for readability it is
-better use L<Alien::nasm> without the automatic import:
-
- use Alien::nasm ();
-
-and explicitly modify the C<PATH> yourself (examples are above in the
-synopsis).  The old style will issue a warning.  The old behavior will be
-removed, but not before 31 January 2018.
-
-=cut
-  
