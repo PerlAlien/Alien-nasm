@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use Decode::Mojo instead of Decode::HTML
 
 0.20      2018-01-31 10:31:01 -0500
   - implicit modification of PATH is now removed

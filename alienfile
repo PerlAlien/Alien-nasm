@@ -21,7 +21,7 @@ share {
 
   requires 'Path::Tiny';
   plugin 'Fetch::HTTPTiny' => 'http://www.nasm.us/pub/nasm/releasebuilds';
-  plugin 'Decode::HTML' => ();
+  plugin 'Decode::Mojo' => ();
   plugin 'Prefer::SortVersions' => ();
 
   download sub {
