@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.21      2019-06-18 11:26:10 -0400
   - Use Decode::Mojo instead of Decode::HTML
 
 0.20      2018-01-31 10:31:01 -0500
