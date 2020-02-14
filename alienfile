@@ -26,13 +26,13 @@ share {
 
   download sub {
     my($build) = @_;
-    
+
     my $res = $build->decode($build->fetch('https://www.nasm.us/pub/nasm/releasebuilds'));
 
     $res->{list} = [grep { $_->{filename} =~ /^[0-9\.]+$/ } @{ $res->{list} }];
-    
+
     $res = $build->prefer($res);
-    
+
     die "unable to find first level candidate"
       unless @{ $res->{list} } > 0;
 
@@ -50,16 +50,16 @@ share {
       $url = $res->{list}->[0]->{url};
       $regex = qr/^nasm-[0-9\.]+\.tar\.gz$/;
     }
-    
+
     $res = $build->decode($build->fetch($url));
-    
+
     $res->{list} = [grep { $_->{filename} =~ $regex } @{ $res->{list} }];
 
     $res = $build->prefer($res);
 
     die "unable to find second level candidate"
       unless @{ $res->{list} } > 0;
-    
+
     $res = $build->fetch($res->{list}->[0]->{url});
     Path::Tiny->new($res->{filename})->spew_raw($res->{content});
     $build->runtime_prop->{command} = 'nasm';
@@ -81,7 +81,7 @@ share {
   }
   else
   {
-    plugin 'Extract' => 'tar.gz';  
+    plugin 'Extract' => 'tar.gz';
     plugin 'Build::MSYS' => ();
 
     build [
