@@ -6,22 +6,26 @@ Find or build nasm, the netwide assembler
 
 From your Perl script:
 
-    use Alien::nasm ();
-    use Env qw( @PATH );
-    
-    unshift @ENV, Alien::nasm->bin_dir;
-    system 'nasm', ...;
+```perl
+use Alien::nasm ();
+use Env qw( @PATH );
+
+unshift @ENV, Alien::nasm->bin_dir;
+system 'nasm', ...;
+```
 
 From [alienfile](https://metacpan.org/pod/alienfile):
 
-    use alienfile;
-    
-    share {
-      requires 'Alien::nasm';
-      build [
-        '%{nasm} ...',
-      ];
-    };
+```perl
+use alienfile;
+
+share {
+  requires 'Alien::nasm';
+  build [
+    '%{nasm} ...',
+  ];
+};
+```
 
 # DESCRIPTION
 
@@ -34,7 +38,9 @@ should work with this class.
 
 ## nasm
 
-    %{nasm}
+```
+%{nasm}
+```
 
 Returns the name of the nasm executable.  As of this writing it is always
 `nasm`, but in the future it may have a different value.
