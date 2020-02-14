@@ -1,4 +1,4 @@
-# Alien::nasm [![Build Status](https://secure.travis-ci.org/plicease/Alien-nasm.png)](http://travis-ci.org/plicease/Alien-nasm)
+# Alien::nasm [![Build Status](https://secure.travis-ci.org/plicease/Alien-nasm.png)](http://travis-ci.org/plicease/Alien-nasm) ![macos-share](https://github.com/plicease/Alien-nasm/workflows/macos-share/badge.svg) ![macos-system](https://github.com/plicease/Alien-nasm/workflows/macos-system/badge.svg) ![windows-share](https://github.com/plicease/Alien-nasm/workflows/windows-share/badge.svg)
 
 Find or build nasm, the netwide assembler
 
