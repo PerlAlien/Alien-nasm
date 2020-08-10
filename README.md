@@ -1,4 +1,4 @@
-# Alien::nasm [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-nasm.png)](http://travis-ci.org/Perl5-Alien/Alien-nasm) ![macos-share](https://github.com/Perl5-Alien/Alien-nasm/workflows/macos-share/badge.svg) ![macos-system](https://github.com/Perl5-Alien/Alien-nasm/workflows/macos-system/badge.svg) ![windows-share](https://github.com/Perl5-Alien/Alien-nasm/workflows/windows-share/badge.svg)
+# Alien::nasm [![Build Status](https://travis-ci.org/PerlAlien/Alien-nasm.svg)](http://travis-ci.org/PerlAlien/Alien-nasm) ![macos-share](https://github.com/PerlAlien/Alien-nasm/workflows/macos-share/badge.svg) ![macos-system](https://github.com/PerlAlien/Alien-nasm/workflows/macos-system/badge.svg) ![windows-share](https://github.com/PerlAlien/Alien-nasm/workflows/windows-share/badge.svg)
 
 Find or build nasm, the netwide assembler
 
