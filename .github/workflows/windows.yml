@@ -1,4 +1,4 @@
-name: windows-share
+name: windows
 
 on:
   push:
@@ -45,9 +45,9 @@ jobs:
         uses: actions/cache@v1
         with:
           path: c:\cx
-          key: ${{ runner.os }}-build-share-${{ hashFiles('perlversion.txt') }}
+          key: ${{ runner.os }}-build-${{ hashFiles('perlversion.txt') }}
           restore-keys: |
-            ${{ runner.os }}-build-share-${{ hashFiles('perlversion.txt') }}
+            ${{ runner.os }}-build-${{ hashFiles('perlversion.txt') }}
 
       - name: Install Static Dependencies
         run: |
