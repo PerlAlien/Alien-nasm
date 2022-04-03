@@ -43,8 +43,13 @@ should work with this class.
 
  %{nasm}
 
-Returns the name of the nasm executable.  As of this writing it is always
-C<nasm>, but in the future it may have a different value.
+Returns the name of the nasm executable.
+
+=head2 ndisasm
+
+ %{ndisasm}
+
+Returns the name of the ndisasm executable.
 
 =cut
 
@@ -53,6 +58,9 @@ sub alien_helper
   return {
     nasm => sub {
       'nasm';
+    },
+    ndisasm => sub {
+      'ndisasm';
     },
   }
 }

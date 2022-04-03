@@ -42,8 +42,15 @@ should work with this class.
 %{nasm}
 ```
 
-Returns the name of the nasm executable.  As of this writing it is always
-`nasm`, but in the future it may have a different value.
+Returns the name of the nasm executable.
+
+## ndisasm
+
+```
+%{ndisasm}
+```
+
+Returns the name of the ndisasm executable.
 
 # AUTHOR
 
