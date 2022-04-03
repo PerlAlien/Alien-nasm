@@ -1,4 +1,4 @@
-# Alien::nasm ![linux](https://github.com/PerlAlien/Alien-nasm/workflows/linux/badge.svg) ![macos-share](https://github.com/PerlAlien/Alien-nasm/workflows/macos-share/badge.svg) ![macos-system](https://github.com/PerlAlien/Alien-nasm/workflows/macos-system/badge.svg) ![windows-share](https://github.com/PerlAlien/Alien-nasm/workflows/windows-share/badge.svg)
+# Alien::nasm ![static](https://github.com/PerlAlien/Alien-nasm/workflows/static/badge.svg) ![linux](https://github.com/PerlAlien/Alien-nasm/workflows/linux/badge.svg) ![macos](https://github.com/PerlAlien/Alien-nasm/workflows/macos/badge.svg) ![windows](https://github.com/PerlAlien/Alien-nasm/workflows/windows/badge.svg)
 
 Find or build nasm, the netwide assembler
 
@@ -51,7 +51,7 @@ Graham Ollis <plicease@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2017 by Graham Ollis.
+This software is copyright (c) 2017-2022 by Graham Ollis.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
